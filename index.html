@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafco Enterprises | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="logo">
+    <span class="brand-name">RAFCO</span>
+    <span class="brand-tagline">BEST ESSENTIALS</span>
+            </div>
+
+            <div class="cart-box">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+      
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search for electronics, clothes...">
+            <button class="search-button">Search</button>
+        </div>
+
+        <nav class="category-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="electronics.html">Electronics</a>
+            <a href="clothes.html">Clothes</a>
+            <a href="household.html">Household</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>Premium Quality, <span class="gold-text">Best Prices.</span></h1>
+            <p>Your one-stop shop for everything you need.</p>
+            <a href="#featured-products" class="hero-btn">Start Shopping</a>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="category-grid">
+            <a href="electronics.html" class="cat-card electronics">Electronics</a>
+            <a href="clothes.html" class="cat-card clothes">Clothes</a>
+            <a href="household.html" class="cat-card household">Household</a>
+        </div>
+    </section>
+  <section id="featured-products"
+    <main id="shop" class="products-section">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">New</div>
+                <img src="https://via.placeholder.com/300" alt="Product">
+                <div class="card-details">
+                    <h3>Smart LED Television</h3>
+                    <p class="price">₦250,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        </section>
+        
+        <section id="cart-summary" class="cart-section">
+    <div class="cart-header">
+        <h2>Your Selection</h2>
+        <button id="clear-cart-btn" class="secondary-btn">Clear All</button>
+    </div>
+    
+    <div id="cart-items-list">
+        </div>
+    
+    <div class="cart-total">
+        <strong>Total Items: </strong> <span id="total-items">0</span>
+    </div>
+    <button id="whatsapp-order-btn" class="primary-btn" style="width: 100%; margin-top: 20px; background-color: #075E54; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+    Send Order via WhatsApp <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 22px; margin-left: 10px; vertical-align: middle;">
+
+</button>
+
+</section>
+
+<div id="custom-toast" class="toast">Added to cart! ️🛒</div>
+
+    </main>
+  <script src="script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+:root {
+    --navy: #001f3f;
+    --gold: #D4AF37;
+    --pink: #fce4ec;
+    --white: #ffffff;
+    --light-gray: #f9f9f9;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body { 
+   font-family: 'Inter', sans-serif; 
+   background-color: var(--light-gray); 
+   color: #333; 
+  
+}
+ /* This defines what the animation actually does */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Starts 20px lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends at its natural position */
+    }
+}
+
+/* This applies it to the whole page */
+body {
+    animation: fadeInUp 0.7s ease-out;
+}
+
+ html{
+   scroll-behavior: smooth;
+ }
+/* Custom Scrollbar for Chrome/Safari/Edge */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f1d57a;
+}
+
+/* HEADER & SEARCH */
+.main-header {
+    background-color: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding-bottom: 5px;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 5%;
+}
+.logo {
+    display: flex;
+    flex-direction: column; /* Stacks text vertically */
+    line-height: 1; /* Removes extra space between lines */
+    text-align: left;
+}
+
+.brand-name {
+    font-size: 1.5rem; /* Big and bold */
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.brand-tagline {
+    font-size: 1rem; /* Small and elegant */
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 1.7px; /* Adds that "luxury" spaced-out feel */
+    margin-top: 2px;
+}
+
+.cart-box { 
+  color: white; 
+  position: relative; 
+  cursor: pointer; 
+}
+
+#cart-count {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.search-container {
+    display: flex;
+    padding: 0 5%;
+    margin-bottom: 5px;
+    height: 40px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 0.85rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.search-button {
+    background: var(--gold);
+    border: none;
+    padding: 0 20px;
+    font-size: 0.85rem;
+    border-radius: 0 25px 25px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero {
+    /* ... your other styles ... */
+    background: linear-gradient(tobottom, var(--pink), #ffffff);
+    padding: 30px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 40px;
+    background-color: var(--gold);
+    color: var(--navy);
+    text-decoration: none; /* Removes the underline */
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px; /* Makes it a "pill" shape */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.hero-btn:hover {
+    background-color: var(--navy);
+    color: var(--gold);
+    transform: scale(1.05); /* Grows slightly when hovered */
+    box-shadow: 0 6px 20px rgba(0, 31, 63, 0.4);
+}
+
+/* CATEGORY NAV */
+.category-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: rgba(255,255,255,0.1);
+    padding: 12px 10px;
+}
+
+.category-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0.8px;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 5px 10px;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.category-nav a:hover{
+  color: #D4AF37;
+}
+
+.category-nav a::after{
+  content: '';
+    position: absolute;
+    width: 0; /* Start with no width */
+    height: 1px;
+    bottom: 0;
+    left: 50%; /* Start from the middle */
+    /*background-color: var(--gold);*/
+    background-color: rgba(212, 175, 55, 0.8); /* 80% opacity gold */
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* This is the magic animation */
+    transform: translateX(-50%); /* Keeps it centered as it grows */
+}
+
+/* The Animation when Hovered */
+.category-nav a:hover::after {
+    width: 100%; /* Grow to full width */
+}
+
+/* The Animation for the Active Page */
+.category-nav a.active::after {
+    width: 100%; /* Stays full width on the active page */
+    background-color: var(--gold);
+}
+
+.category-nav a.active { 
+  color: var(--gold); 
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  font-weight: 400;
+  
+  
+  }
+
+/* CATEGORY GRID */
+.categories-section { padding: 40px 5%; }
+.section-title { margin-bottom: 20px; font-weight: 800; color: var(--navy); }
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.cat-card {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: var(--navy);
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: var(--pink); /* Pink as a subtle base */
+    border-bottom: 4px solid var(--gold);
+    background-color: white; /* White cards look cleaner */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+    border: 1px solid var(--pink); /* Pink border instead of pink background */
+    color: var(--navy);
+    padding: 20px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.cat-card:active{
+   transform: scale(0.95);
+   background-color: var(--pink);
+  
+}
+.cat-card:hover {
+    border-color: var(--gold);
+    background-color: var(--pink);
+}
+
+}
+
+/* PRODUCT CARDS */
+.products-section { 
+  padding: 20px 5%; 
+  animation: fadeInUp 1s ease-out 0.4s backwards
+  
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--gold); /* Subtle gold border on hover */
+}
+
+.badge {
+    position: absolute;
+    top: 10px; left: 10px;
+    background: var(--gold);
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.product-card img {
+  width: 100%;
+    height: 180px; /* Forces all images to the same height */
+    object-fit: cover; /* Crops the image perfectly so it doesn't look squashed */
+    border-radius: 8px;
+}
+
+.card-details { 
+  padding: 15px; 
+  
+}
+.card-details h3 { 
+  font-size: 0.9rem;
+  margin-bottom: 5px; 
+  height: 40px;
+  overflow: hidden; 
+}
+
+.price { 
+  color: var(--navy); font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; }
+
+.add-to-cart {
+    width: 100%;
+    background: var(--gold);
+    color: white
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #D4AF37 0%, #F1D57A 50%, #D4AF37 100%);
+    background-size: 200% auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    transform: scale(1.05);
+    background-position: right center; /* The gold "shimmers" when hovered */
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.cart-section {
+    margin: 20px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    border-bottom: 2px solid #D4AF37; /* Your gold color */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.secondary-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.toast {
+    position: fixed;
+    bottom: -100px; /* Hidden off-screen */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Dark/Professional */
+    color: #D4AF37; /* Your Gold color */
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: bottom 0.5s ease-in-out;
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+.toast.show {
+    bottom: 50px; /* Slides up into view */
+}

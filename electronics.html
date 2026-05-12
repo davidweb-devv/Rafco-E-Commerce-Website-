@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafco | Electronics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="logo">
+    <span class="brand-name">RAFCO</span>
+    <span class="brand-tagline">BEST ESSENTIALS</span>
+</div>
+
+            <div class="cart-box">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search for electronics, clothes...">
+            <button class="search-button">Search</button>
+        </div>
+        
+        <nav class="category-nav">
+            <a href="index.html">Home</a>
+            <a href="electronics.html" class="active">Electronics</a>
+            <a href="clothes.html">Clothes</a>
+            <a href="household.html">Household</a>
+        </nav>
+    </header>
+
+    <section class="hero" style="background: linear-gradient(to bottom, #ffffff, #e3f2fd);">
+        <h1>Smart <span class="gold-text">Electronics</span></h1>
+        <p>Latest gadgets and home appliances for modern living.</p>
+    </section>
+
+    <main class="products-section">
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">Tech</div>
+                <img src="https://via.placeholder.com/300?text=LED+TV" alt="TV">
+                <div class="card-details">
+                    <h3>43" Smart UHD TV</h3>
+                    <p class="price">₦210,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300?text=Blender" alt="Blender">
+                <div class="card-details">
+                    <h3>High-Speed Food Processor</h3>
+                    <p class="price">₦35,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        
+        <section id="cart-summary" class="cart-section">
+    <div class="cart-header">
+        <h2>Your Selection</h2>
+        <button id="clear-cart-btn" class="secondary-btn">Clear All</button>
+    </div>
+    
+    <div id="cart-items-list">
+        </div>
+    
+    <div class="cart-total">
+        <strong>Total Items: </strong> <span id="total-items">0</span>
+    </div>
+     <button id="whatsapp-order-btn" class="primary-btn" style="width: 100%; margin-top: 20px; background-color: #075E54; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+    Send Order via WhatsApp <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 22px; margin-left: 10px; vertical-align: middle;">
+
+</button>
+
+</section>
+
+<div id="custom-toast" class="toast">Added to cart! ️🛒</div>
+
+    </main>
+   <script src="script.js"></script>
+
+</body>
+</html>
