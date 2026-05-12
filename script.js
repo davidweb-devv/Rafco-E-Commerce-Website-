@@ -118,3 +118,20 @@ if (whatsappBtn) {
         window.open(whatsappURL, '_blank');
     });
 }
+const searchInput = document.querySelector('.search-input');
+
+searchInput.addEventListener('keyup', (e) => {
+    const term = e.target.value.toLowerCase();
+    const products = document.querySelectorAll('.product-card');
+
+    products.forEach(product => {
+        // This looks at the product name inside your cards
+        const productName = product.querySelector('h3').textContent.toLowerCase();
+        
+        if(productName.includes(term)) {
+            product.style.display = 'block'; // or 'flex' if you use flexbox for cards
+        } else {
+            product.style.display = 'none';
+        }
+    });
+});
