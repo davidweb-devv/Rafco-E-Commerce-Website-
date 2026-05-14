@@ -49,7 +49,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         updateCartUI();
         
         // Quick feedback for the user
-        showToast(`${name} added to cart!`);
+        showToast('Item added to cart!');
         
     });
 });
